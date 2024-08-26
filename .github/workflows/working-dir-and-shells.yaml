@@ -17,6 +17,9 @@ jobs:
           echo $GITHUB_WORKSPACE
   display-wd-info-windows:
     runs-on: windows-latest
+    defaults:
+        run:
+          shell: pwsh
     steps:
       - name: Display Working Directory & List Files
         run: |
@@ -25,4 +28,8 @@ jobs:
           echo $env:GITHUB_SHA
           echo $env:GITHUB_REPOSITORY
           echo $env:GITHUB_WORKSPACE
-      
+      - name: Python Shell
+        shell: python
+        run: |
+          import platform 
+          print(platform.processor())
