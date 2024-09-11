@@ -35,7 +35,7 @@ runs:
         name: joke
         path: joke.txt
     - name: Send a slack message
-      uses: docker://shwetabhdevops/slack-notify
+      uses: docker://technosophos/slack-notify
       env:
         SLACK_WEBHOOK: ${{ inputs.slack_webhook }}
         SLACK_TITLE: Random Joke
